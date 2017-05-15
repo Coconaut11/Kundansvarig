@@ -1,0 +1,26 @@
+{
+  "name": "kundansvarig",
+  "version": "0.0.1",
+  "description": "client manager",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Coconaut11/Kundansvarig.git"
+  },
+  "keywords": [
+    "client-manager",
+    "manager"
+  ],
+  "author": "Roger Esteve",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Coconaut11/Kundansvarig/issues"
+  },
+  "homepage": "https://github.com/Coconaut11/Kundansvarig#readme",
+  "devDependencies": {
+    "electron-prebuilt": "^1.4.13"
+  }
+}
