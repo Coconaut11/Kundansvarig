@@ -1,0 +1,41 @@
+<html>
+  <head>
+    <title>Kundansvarig</title>
+  </head>
+  <body>
+    <style>
+      body {
+        background-color: rgba(0, 0, 0, 0.1);
+      }
+
+      img {
+        width:400px;
+        height:400px;
+
+        margin-top: 25vh; /* Half the height */
+      }
+    </style>
+
+    <center>
+      <img src="res/img/user-list.png" id="user-list"
+      onmouseover="this.src='res/img/user-list-hover.png'"
+      onmouseout="this.src='res/img/user-list.png'"></img>
+
+      <img src="res/img/user-create.png" id="user-create"
+      onmouseover="this.src='res/img/user-create-hover.png'"
+      onmouseout="this.src='res/img/user-create.png'"></img>
+    </center>
+
+    <script>
+      const main = require("main.js");
+
+      document.getElementById("user-list").addEventListener("click", function() {
+        console.log("Button user list!");
+      });
+
+      document.getElementById("user-create").addEventListener("click", function() {
+        console.log("Button user create!");
+      });
+    </script>
+  </body>
+</html
