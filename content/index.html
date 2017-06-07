@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <title>Kundansvarig</title>
+  </head>
+  <body>
+    <script>
+    const electron = require("electron");
+    const usermanagement = require("../api/UserManagement.js");
+
+    usermanagement.calcUsersLength();
+    window.onload = () => {
+      document.getElementById("btn_search").onclick = () => {
+        let matching = usermanagement.getUserByName(document.getElementById("in_key").value);
+        for(let i = 0; i < matching.length; i++) {
+          let div = document.getElementById("results");
+          let toadd = document.createTextNode(matching[i].name + "<br/>");
+          div.appendChild(toadd);
+        }
+      }
+    }
+    </script>
+    <input id="in_key"></input>
+    <button id="btn_search" onClick="search">Search</button><br>
+    <div id="results"></div>
+  </body>
+</html

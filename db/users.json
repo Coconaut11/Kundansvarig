@@ -1,0 +1,7 @@
+{
+  "users":[
+    {"id":0, "name":"Roger Esteve Sanchez", "age":15, "notes":"Este cliente es el puto amo."},
+    {"id":1, "name":"Raul Esteo Rodes", "age":16, "notes":"Loser."},
+    {"id":2, "name":"Roger Esteve Sanchez", "age":15, "notes":"Este cliente es el puto amo."}
+  ]
+}
