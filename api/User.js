@@ -1,7 +1,17 @@
-exports.User = () => {
-  this.id = 0;
-  this.name = "";
-  this.age = 0;
+module.exports = class {
+    constructor(json) {
+        this.id = json.id;
+        this.name = json.name;
 
-  this.notes = "";
+        this.age = json.age;
+        this.date_birth = json.date_birth;
+
+        this.adress = json.adress;
+        this.telf = json.telf;
+
+        this.diseases = json.diseases;
+        this.medication = json.medication;
+
+        this.notes = "";
+    }
 }

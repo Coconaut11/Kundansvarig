@@ -1,0 +1,10 @@
+{
+    "name":["Roger", "Esteve", "Sanchez"],
+    "age":15,
+    "birth_date":"30/09/2001",
+    "adress":"crta d'orrius 31",
+    "telf":"687989395",
+
+    "diseases":[{"name":"Putoamoidad", "level":0}],
+    "medication":[{"name":"ibuprogeno", "level":0}],
+}

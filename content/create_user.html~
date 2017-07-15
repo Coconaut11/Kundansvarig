@@ -1,0 +1,16 @@
+<html>
+  <head>
+    <title>Crear nou client - Kundansvarig</title>
+  </head>
+  <body>
+    <form>
+      Nom: <input class="ipt_name"/><input class="ipt_sur1"/><input class="ipt_sur2"/><br>
+      Data de neixement: <input class="ipt_birth"/><br>
+      <br>
+      Adreça: <input class="ipt_adress"/><br>
+      Teléfon: <input class="ipt_telf"/>
+
+      <div class="diseases"></div>
+    </form>
+  </body>
+</html>

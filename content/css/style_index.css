@@ -1,0 +1,37 @@
+body {
+    background-color: #dddddd;
+    font-family: Arial;
+}
+
+input {
+    background-color: #cccccc;
+    border-radius: 5px;
+    border: 0px;
+}
+
+#in_key {
+    margin-left: 10px;
+}
+
+#results {
+    margin-top: 10px;
+    padding: 5px;
+}
+
+#results table {
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+#results table:first-child {
+    border: 2px solid black;
+}
+
+#btn_create_user {
+    width: 10px;
+    height: 10px;
+    color: #000000;
+    text-decoration: none;
+    background-color: #cccccc;
+    border-radius: 5px;
+}

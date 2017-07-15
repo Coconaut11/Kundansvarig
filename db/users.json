@@ -1,7 +1,1 @@
-{
-  "users":[
-    {"id":0, "name":"Roger Esteve Sanchez", "age":15, "notes":"Este cliente es el puto amo."},
-    {"id":1, "name":"Raul Esteo Rodes", "age":16, "notes":"Loser."},
-    {"id":2, "name":"Roger Esteve Sanchez", "age":15, "notes":"Este cliente es el puto amo."}
-  ]
-}
+{"users":[{"id":0,"name":"Roger Esteve Sanchez","age:":15,"notes":"The fucking boss"},{"id":1,"name":"Raúl Esteo Rodes","age:":15,"notes":"Un loser al Rocket League"},{"id":2,"name":"Mario ALdabó Sanchez","age:":15,"notes":"Un loser al Rocket League"},{"id":3,"name":"Francesc Traver Garriga","age:":15,"notes":"Un loser al Rocket League"},{"id":4,"name":"Albert Mestre Mas","age:":15,"notes":"Un loser al Rocket League"},{"id":5,"name":"Lluc Suarez Iturri","age:":15,"notes":"Un loser al Rocket League"},{"id":6,"name":"Didac del Pino Donnay","age:":15,"notes":"Un loser al Rocket League"},{"id":7,"name":"Arnau Vila Planas","age:":15,"notes":"Un loser al Rocket League"},{"id":8,"name":"Antoni Mas ...","age:":15,"notes":"Un loser al Rocket League"},{"id":9,"name":"Claudia Meritxell Calaveras Sanchez","age:":15,"notes":"Un loser al Rocket League"},{"id":10,"name":"Andres Acuña Perandres","age:":15,"notes":"Un loser al Rocket League"}]}

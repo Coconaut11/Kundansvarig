@@ -1,0 +1,12 @@
+
+{
+    "id":1,
+    "name":["Raul", "Este0", "Rodes"],
+    "age":16,
+    "date_birth":"03/03/2001",
+    "adress":"puente 4",
+    "telf":"687544654",
+
+    "diseases":[{"name":"Gilipollez", "level":0}],
+    "medication":[{"name":"torbaspin", "level":0}]
+}

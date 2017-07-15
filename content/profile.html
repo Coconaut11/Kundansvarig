@@ -1,0 +1,56 @@
+<html>
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <script>
+            const userManagement = require("../api/UserManagement.js");
+
+            window.onload = function() {
+                userManagement.loadUsers(onload);
+            }
+
+            let onload = () => {
+                let id = getURLParam(0);
+                let user;
+                setTimeout(() => {
+                    user = userManagement.getUserById(id)
+                    console.log(user);
+                    document.title = user.name[0];
+
+                    fill("txt_name", user.name[1] + " " + user.name[2] + ", " + user.name[0]);
+                    fill("txt_age", user.age);
+                    fill("txt_birth", user.birth_date);
+                    fill("txt_adress", user.adress);
+                    fill("txt_telf", user.telf);
+                }, 1000);
+            }
+
+            let fill = (id, cont) => {
+                document.getElementById(id).innerHTML = cont;
+            }
+
+            let getURLParam = (i) => {
+                let url = window.location.href;
+                let param = url.split("?")[1].split("&")[i];
+                return param.split("=")[1];
+            }
+        </script>
+        <div class="wrap">
+            <strong>Nom: </strong><span id="txt_name"></span><br>
+            <strong>Edat: </strong><span id="txt_age"></span><br>
+            <strong>Neixement: </strong><span id="txt_birth"></span><br>
+            <strong>Adre�a: </strong><span id="txt_adress"></span><br>
+            <strong>Telf: </strong><span id="txt_telf"></span>
+
+            <div class="" id="diseases">
+
+            </div>
+
+            <div id="medication">
+
+            </div>
+        </div>
+    </body>
+</html>

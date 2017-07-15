@@ -1,26 +1,65 @@
 <html>
   <head>
     <title>Kundansvarig</title>
+    <link rel="stylesheet" href="css/style_index.css" type="text/css">
   </head>
-  <body>
+  <body width="100%">
     <script>
-    const electron = require("electron");
-    const usermanagement = require("../api/UserManagement.js");
+    const userManagement = require("../api/UserManagement.js");
 
-    usermanagement.calcUsersLength();
-    window.onload = () => {
-      document.getElementById("btn_search").onclick = () => {
-        let matching = usermanagement.getUserByName(document.getElementById("in_key").value);
-        for(let i = 0; i < matching.length; i++) {
-          let div = document.getElementById("results");
-          let toadd = document.createTextNode(matching[i].name + "<br/>");
-          div.appendChild(toadd);
-        }
-      }
+    window.onload = function() {
+       userManagement.loadUsers(onload);
     }
-    </script>
-    <input id="in_key"></input>
-    <button id="btn_search" onClick="search">Search</button><br>
-    <div id="results"></div>
+
+    let onload = () => {
+        console.log(userManagement.users);
+    }
+
+    function search() {
+        let val = document.getElementById("in_key").value;
+        if(val != null) {
+            console.log(val);
+            var matching = userManagement.getUserByName(val);
+            var div = document.getElementById("res_tab");
+            div.innerHTML = '<td width="5%"><strong>ID</strong></td><td width="35%"><strong>Name</strong></td><td width="10%"><strong>Age</strong></td>';
+            for (let i = 0; i < matching.length; i++) {
+                addUser(matching[i].id, matching[i].name, matching[i].age);
+            }
+        }
+    }
+
+    function addUser(id, name, age) {
+        var table = document.getElementById("res_tab");
+        var tr = document.createElement("tr");
+
+        var td_id = document.createElement("td");
+        var td_name = document.createElement("td");
+        var td_age = document.createElement("td");
+
+        td_id.innerHTML = id;
+        td_name.innerHTML = "<a href='profile.html?id=" + id + "'>" + name[1] + " " + name[2] + ", " + name[0] + "</a>";
+        td_age.innerHTML = age;
+
+        tr.appendChild(td_id);
+        tr.appendChild(td_name);
+        tr.appendChild(td_age);
+
+        table.appendChild(tr);
+    }
+</script>
+
+    <a href="create_user.html" id="btn_create_user">+</a>
+    <input size="93" id="in_key" oninput="search()">
+    <center>
+      <div id="results" width="100%">
+        <table id="res_tab" width="100%">
+          <tr>
+            <td width="5%"><strong>ID</strong></td>
+            <td width="35%"><strong>Name</strong></td>
+            <td width="10%"><strong>Age</strong></td>
+          </tr>
+        </table>
+      </div>
+    </center>
   </body>
-</html
+</html>
