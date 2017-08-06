@@ -3,9 +3,9 @@
     "name":["Roger", "Esteve", "Sanchez"],
     "age":15,
     "date_birth":"30/09/2001",
-    "adress":"crta d'orrius 31",
+    "adress":"Carretera d'orrius 31 (La Roca del Valles)",
     "telf":"687989395",
 
-    "diseases":[{"name":"Putoamoidad", "level":0}],
-    "medication":[{"name":"ibuprogeno", "level":0}]
+    "diseases":[{"name":"Putoamoidad", "risk":false}, {"name": "sida", "risk":true}],
+    "medication":[{"name":"ibuprogeno", "regular":false, "risk":false}, {"name":"terbaspin", "regular":true, "risk":false}]
 }

@@ -52,22 +52,16 @@ exports.getUserByName = (name) => {
         let regexp = new RegExp(name, "gi");
         let us_name = this.users[i].name[0] + " " + this.users[i].name[1] + " " + this.users[i].name[2];
 		let mat = us_name.match(regexp);
-		console.log(mat);
 		if(mat) res.push(this.users[i]);
     }
-    if(res.length === 0) return this.users;
+    if(res.length === 0) return [];
     return res;
 }
 
 exports.getUserById = (id) => {
-    console.log(this.users);
-    console.log("length: " + this.users.length);
-    console.log(this.users[0]);
 	for(let i = 0; i < this.users.length; i++) {
 		let u = this.users[i];
-		console.log(u.id + " ? " + id);
 		if(parseInt(u.id) === parseInt(id)) {
-			console.log("found");
 			return u;
 		}
 	}

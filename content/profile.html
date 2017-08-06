@@ -2,13 +2,22 @@
     <head>
         <title></title>
         <meta charset="UTF-8">
+        <link rel="stylesheet" href="css/_profile.css" type="text/css">
     </head>
     <body>
         <script>
+            const path = require("path");
             const userManagement = require("../api/UserManagement.js");
 
-            window.onload = function() {
+            window.onload = () => {
                 userManagement.loadUsers(onload);
+                document.addEventListener("keydown", (key) => {
+                    console.log(key);
+                    if(key.code === "Escape") {
+                        console.log(__dirname);
+                        window.location.href = path.join(__dirname, "index.html");
+                    }
+                });
             }
 
             let onload = () => {
@@ -17,14 +26,106 @@
                 setTimeout(() => {
                     user = userManagement.getUserById(id)
                     console.log(user);
-                    document.title = user.name[0];
+                    document.title = `${user.name[0]} ${user.name[1]} ${user.name[2]} - Kundansvarig `;
 
                     fill("txt_name", user.name[1] + " " + user.name[2] + ", " + user.name[0]);
                     fill("txt_age", user.age);
                     fill("txt_birth", user.birth_date);
                     fill("txt_adress", user.adress);
                     fill("txt_telf", user.telf);
+
+                    fillMedication(user.medication);
+                    fillDiseases(user.diseases);
                 }, 1000);
+            }
+
+            let fillMedication = (arr) => {
+                let table = document.getElementById("table-sec-med");
+
+                for(let i = 0; i < arr.length; i++) {
+                    let tr = document.createElement("tr");
+
+                    tr.id = "li_med";
+                    let s_name = document.createElement("td");
+                    let s_regular = document.createElement("td");
+                    let s_risk = document.createElement("td");
+                    let s_img_edit = document.createElement("td");
+                    let s_img_delete = document.createElement("td");
+                    let img_edit = document.createElement("img");
+                    let img_delete = document.createElement("img");
+                    let img_risk = document.createElement("img");
+                    let img_not_risk = document.createElement("img");
+
+
+                    s_img_edit.className = "btn-add";
+                    s_img_delete.className = "btn-add";
+
+                    s_img_edit.id = "item";
+                    s_img_delete.id = "item";
+
+
+
+                    s_name.innerHTML = arr[i].name;
+                    s_regular.innerHTML = arr[i].regular === true ? "Regular" : "Irregular";
+                    img_edit.src = path.join("img", "edit.png");
+                    img_delete.src = path.join("img", "delete.png");
+                    img_risk.src = path.join("img", "arrow_risk.png");
+                    img_not_risk.src = path.join("img", "arrow_not_risk.png");
+                    s_img_edit.appendChild(img_edit);
+                    s_img_delete.appendChild(img_delete);
+                    s_risk.appendChild(arr[i].risk === true ? img_risk : img_not_risk);
+
+                    tr.appendChild(s_name);
+                    tr.appendChild(s_regular);
+                    tr.appendChild(s_risk);
+                    tr.appendChild(s_img_edit);
+                    tr.appendChild(s_img_delete);
+
+                    table.appendChild(tr);
+                }
+            }
+
+            let fillDiseases = (arr) => {
+                let table = document.getElementById("table-sec-dis");
+
+                for(let i = 0; i < arr.length; i++) {
+                    let tr = document.createElement("tr");
+
+                    tr.id = "li_dis";
+                    let s_name = document.createElement("td");
+                    let s_risk = document.createElement("td");
+                    let s_img_edit = document.createElement("td");
+                    let s_img_delete = document.createElement("td");
+                    let img_edit = document.createElement("img");
+                    let img_delete = document.createElement("img");
+                    let img_risk = document.createElement("img");
+                    let img_not_risk = document.createElement("img");
+
+
+                    s_img_edit.className = "btn-add";
+                    s_img_delete.className = "btn-add";
+
+                    s_img_edit.id = "item";
+                    s_img_delete.id = "item";
+
+
+
+                    s_name.innerHTML = arr[i].name;
+                    img_edit.src = path.join("img", "edit.png");
+                    img_delete.src = path.join("img", "delete.png");
+                    img_risk.src = path.join("img", "arrow_risk.png");
+                    img_not_risk.src = path.join("img", "arrow_not_risk.png");
+                    s_img_edit.appendChild(img_edit);
+                    s_img_delete.appendChild(img_delete);
+                    s_risk.appendChild(arr[i].risk === true ? img_risk : img_not_risk);
+
+                    tr.appendChild(s_name);
+                    tr.appendChild(s_risk);
+                    tr.appendChild(s_img_edit);
+                    tr.appendChild(s_img_delete);
+
+                    table.appendChild(tr);
+                }
             }
 
             let fill = (id, cont) => {
@@ -37,20 +138,34 @@
                 return param.split("=")[1];
             }
         </script>
+        <div class="header">
+            <spam class="header-item" id="txt_name"></spam>
+            <spam class="header-item"id="txt_age"></spam>
+            <spam class="header-item" id="txt_birth"></spam><br>
+            <spam class="header-item" id="txt_telf"></spam><br>
+            <spam class="header-item" id="txt_adress"></spam>
+        </div>
         <div class="wrap">
-            <strong>Nom: </strong><span id="txt_name"></span><br>
-            <strong>Edat: </strong><span id="txt_age"></span><br>
-            <strong>Neixement: </strong><span id="txt_birth"></span><br>
-            <strong>Adre�a: </strong><span id="txt_adress"></span><br>
-            <strong>Telf: </strong><span id="txt_telf"></span>
+            <div class="section" id="medication">
+                <br>
+                <span class="sec-title" id="title-med">MEDIACIÓ</span>
+                <span class="btn-add" id="btn-add-med">+</span>
+                <hr>
+                <table class="table-section" id="table-sec-med">
 
-            <div class="" id="diseases">
-
+                </table>
             </div>
 
-            <div id="medication">
+            <div class="section" id="diseases">
+                <br>
+                <span class="sec-title" id="title-dis">MALALTIES</span>
+                <span class="btn-add" id="btn-add-dis">+</span>
+                <hr>
+                <table class="table-section" id="table-sec-dis">
 
+                </table>
             </div>
+
         </div>
     </body>
 </html>

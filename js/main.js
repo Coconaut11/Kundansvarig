@@ -16,6 +16,5 @@ app.on("ready", () => {
     });1
     //w.setMenu(null);
     w.loadURL(path.join(this.path_dir, "../content/index.html"));
-//    w.loadURL(path.join(this.path_dir, "/../content/index.html"));
     exports.window = w;
 });

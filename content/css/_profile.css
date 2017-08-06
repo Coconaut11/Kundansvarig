@@ -1,0 +1,96 @@
+body {
+    width: 100%;
+    margin: 0px;
+    font-family: "Arial";
+    cursor: default;
+}
+
+/*HEADER STUFF*/
+.header {
+    background-color: #00a8ff;
+    color: white;
+    height: 115px;
+}
+
+.header-item:first-of-type{
+    margin-top: 10px;
+    font-size: 38px;
+    font-family: "Arial Black";
+}
+
+.header-item{
+    padding-left: 20px;
+    font-size: 20px;
+}
+
+#txt_age {
+    margin-left: -15px;
+}
+
+#txt_birth {
+    margin-left: 20px;
+}
+
+.header-item:last-of-type {
+    margin-bottom: 12px;
+}
+
+/*WRAP STUFF*/
+
+.sec-title {
+    font-size: 36px;
+    font-family: "Arial Black";
+    margin-left: 30px;
+}
+
+.btn-add {
+    width:45px;
+    float: right;
+    font-size: 40px;
+    margin-right: 30px;
+    cursor: hand;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.btn-add:hover {
+    background-color: #eeeeee;
+}
+
+hr {
+    margin-top: -5px;
+    margin-left: 20px;
+    margin-right: 20px;
+    height: 2px;
+    background-color: black;
+}
+
+.table-section {
+    margin-left: 40px;
+    width: 95%;
+}
+
+.table-section img {
+    width: 40px;
+    height: 40px;
+}
+
+.table-section tr:first-of-type {
+    heigth: 40px;
+}
+
+.table-section tr {
+    height: 60px;
+}
+
+.table-section tr td:first-of-type {
+    font-size: 28px;
+}
+
+.table-section tr td {
+    font-size: 18px;
+}
+
+#item {
+    width: 60px;
+}

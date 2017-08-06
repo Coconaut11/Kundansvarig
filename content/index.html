@@ -1,7 +1,7 @@
 <html>
   <head>
     <title>Kundansvarig</title>
-    <link rel="stylesheet" href="css/style_index.css" type="text/css">
+    <link rel="stylesheet" href="css/_index.css" type="text/css">
   </head>
   <body width="100%">
     <script>
@@ -47,10 +47,10 @@
         table.appendChild(tr);
     }
 </script>
-
-    <a href="create_user.html" id="btn_create_user">+</a>
-    <input size="93" id="in_key" oninput="search()">
-    <center>
+    <header>
+        <a href="create_user.html" id="btn_create_user"><div>+</div></a>
+        <textarea size="93" id="in_key" oninput="search()"></textarea>
+    </header>
       <div id="results" width="100%">
         <table id="res_tab" width="100%">
           <tr>
@@ -58,8 +58,7 @@
             <td width="35%"><strong>Name</strong></td>
             <td width="10%"><strong>Age</strong></td>
           </tr>
-        </table>
+       </table>
       </div>
-    </center>
   </body>
 </html>
