@@ -1,0 +1,52 @@
+body {
+    background-color: #fff;
+    font-family: Arial;
+    margin: 0px;
+}
+
+header {
+    margin: 0px;
+    padding: 20px;
+    background-color: #00a8ff;
+}
+
+input {
+    background-color: #cccccc;
+    border-radius: 5px;
+    border: 0px;
+}
+
+#in_key {
+    margin-left: 70px;
+    margin-top: -50px;
+    resize: none;
+    outline: none;
+    border: none;
+    max-height: 50px;
+    width: 80%;
+    letter-spacing: -0.025rem;
+    font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
+    font-size: 25px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+#results {
+    margin-top: 10px;
+    padding: 5px;
+}
+
+#btn_create_user {
+    font-size: 50px;
+    color: #000000;
+    text-decoration: none;
+}
+
+#btn_create_user div {
+    width: 50px;
+    height: 50px;
+    background-color: #fff;
+    border-radius: 5px;
+    text-align: center;
+    font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
+}

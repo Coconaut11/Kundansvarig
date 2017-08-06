@@ -2,11 +2,11 @@
 {
     "id":2,
     "name":["Claudia Meritxell", "Calaveras", "Sanchez"],
-    "age":32,
+    "age":23,
     "date_birth":"9/03/1994",
     "adress":"una habitacion morroñosa",
     "telf":"687575783",
 
-    "diseases":[{"name":"Gilipollez", "level":0}],
-    "medication":[{"name":"anti-gilipollez", "level":0}]
+    "diseases":[{"name":"Putoamoidad", "risk":false}, {"name": "sida", "risk":false}],
+    "medication":[{"name":"ibuprogeno", "regular":false, "risk":false}, {"name":"terbaspin", "regular":false, "risk":false}]
 }
